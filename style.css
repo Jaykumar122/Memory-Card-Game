@@ -1,4 +1,7 @@
 body {
+    flex: auto;
+    margin: auto;
+    padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
