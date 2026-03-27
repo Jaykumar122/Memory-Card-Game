@@ -1,19 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Card Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Card Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Memory Card Game</h1>
-    <div class="game-container" id="game-container"></div>
-    <div class="score">
-        <p>Moves: <span id="move-count">0</span></p>
-        <p id="status"></p>
+
+  <!-- Ambient background layers -->
+  <div class="bg-noise"></div>
+  <div class="bg-lines"></div>
+  <div class="glow-blob blob-a"></div>
+  <div class="glow-blob blob-b"></div>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-eyebrow">ARCADE CLASSIC</div>
+      <h1 class="title">MEMORY<span class="title-accent">.</span></h1>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-label">MOVES</span>
+        <span class="stat-value" id="move-count">00</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-label">PAIRS</span>
+        <span class="stat-value" id="pair-count">00</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-label">TIME</span>
+        <span class="stat-value" id="timer">00:00</span>
+      </div>
     </div>
-    <button id="restart-btn" style="display: none;">Restart Game</button>
-    <script src="main.js"></script>
+
+    <!-- Game Board -->
+    <main class="board-wrapper">
+      <div class="board" id="board" role="grid" aria-label="Memory card grid"></div>
+    </main>
+
+    <!-- Win Screen (hidden) -->
+    <div class="win-screen" id="win-screen" aria-hidden="true">
+      <div class="win-card">
+        <div class="win-icon">🏆</div>
+        <h2 class="win-title">YOU WIN!</h2>
+        <p class="win-stats" id="win-stats"></p>
+        <button class="btn-restart" id="restart-win">PLAY AGAIN</button>
+      </div>
+    </div>
+
+    <!-- Footer actions -->
+    <footer class="footer">
+      <button class="btn-restart" id="restart-btn">↺ RESTART</button>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
